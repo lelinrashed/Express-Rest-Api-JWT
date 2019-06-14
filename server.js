@@ -4,6 +4,7 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const contactRoute = require('./api/routes/contact')
+const userRoute = require('./api/routes/user')
 
 
 // Connection with database
@@ -27,6 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.use('/api/contacts', contactRoute)
+app.use('/api/users', userRoute)
 
 app.get('/', (req, res) => {
 	res.send('<h1>Welcome to rest api course</h1>')
